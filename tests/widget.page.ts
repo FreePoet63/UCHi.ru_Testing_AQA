@@ -22,17 +22,13 @@ export class WidgetPage {
     }
 
     async openWidget() {
-        const btn = this.page.locator(WidgetPage.selector.BUTTON_OPEN);
+        const btn = this.wrapper().locator(WidgetPage.selector.BUTTON_OPEN);
         await btn.scrollIntoViewIfNeeded();
         await btn.click();
-        await this.page
-        .locator(WidgetPage.selector.ARTICLE_POPULAR_LIST_ITEM)
-        .first()
-        .waitFor({ timeout: 10000 });
     }
 
     async closeWidget() {
-        await this.page.locator(WidgetPage.selector.BUTTON_CLOSE).click();
+        await this.wrapper().locator(WidgetPage.selector.BUTTON_CLOSE).click();
     }
 
     async getPopularArticles() {
