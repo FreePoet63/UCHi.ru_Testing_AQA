@@ -26,7 +26,7 @@ export class WidgetPage {
         await btn.scrollIntoViewIfNeeded();
         await btn.click();
         await this.page
-        .locator('[data-testid="article-list-item"]')
+        .locator(WidgetPage.selector.ARTICLE_POPULAR_LIST_ITEM)
         .first()
         .waitFor({ timeout: 10000 });
     }
